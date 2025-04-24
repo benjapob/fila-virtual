@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FilaVirtualComponent } from './fila-virtual/fila-virtual.component';
+import { ListadoComponent } from './listado/listado.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FilaVirtualComponent,
+    ListadoComponent
   ],
   imports: [
     BrowserModule,
