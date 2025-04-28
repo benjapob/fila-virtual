@@ -35,7 +35,7 @@ export class FilaVirtualComponent {
   constructor(private webSocket: SocketService) {
     // Incializa la conexión al socket
     this.webSocket
-      .escuchar("actualizacionDashboard")
+      .escuchar("actualizacionFila")
       .subscribe((socket: any) => {
         if ("pendientesArray" in socket) {
           const nuevosDatos = socket.pendientesArray
