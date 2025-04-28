@@ -30,20 +30,16 @@
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
-                            <div class="media d-flex">
-                                <div class="media-body text-left">
-                                    <div class="row" style="margin: 0 0 1rem 0.3rem">
-                                        <i class="vsm-icon pe-7s-box2 float-left icon"></i>
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <div class="row icono">
+                                            <!-- <i class="fa-regular fa-file-lines"></i> -->
+                                        </div>
                                     </div>
-                                    <div class="row" style="margin: 0 0 0 0.3rem">
-                                        <span>{{pendiente.bodega_entrega}}</span>
+                                    <div class="media-body text-right">
+                                        <h3 class="numero">{{pendiente.numeroTurno}}</h3>
                                     </div>
                                 </div>
-                                <div class="media-body text-right">
-                                    <h3 class="numero">{{pendiente.number}}</h3>
-                                    <span>{{pendiente.client}}</span>
-                                </div>
-                            </div>
                             </div>
                         </div>
                     </div>
@@ -52,17 +48,17 @@
         </div>
 
         <div class="col-md-4">
-            <!-- Items Finalizados -->
+            <!-- Items En Proceso -->
             <div class="row" style="flex-direction: column;">
-                <h2 class="text-center text-white">Finalizados</h2>
+                <h2 class="text-center text-white">En Proceso</h2>
             </div>
             <!-- Si no hay items -->
-            <div class="row mb-3" *ngIf="finalizadosArray.length === 0">
+            <div class="row mb-3" *ngIf="enProcesoArray.length === 0">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
-                                <h3 class="text-center">No hay items finalizados</h3>
+                                <h3 class="text-center">No hay items en proceso</h3>
                             </div>
                         </div>
                     </div>
@@ -70,25 +66,23 @@
             </div>
             <!-- Si hay items, armo las tarjetas -->
             <!-- Se usa trackBy para mejorar el rendimiento -->
-            <div class="row mb-3" *ngFor="let finalizado of finalizadosArray trackBy: trackById" @listAnimation2>
+            <div class="row mb-3" *ngFor="let enProceso of enProcesoArray trackBy: trackById" @listAnimation2>
                 <div class="col-md-12">
+                    
+                    <!-- Carta info -->
                     <div class="card">
                         <div class="card-content">
                             <div class="card-body">
-                            <div class="media d-flex">
-                                <div class="media-body text-left">
-                                    <div class="row" style="margin: 0 0 1rem 0.3rem">
-                                        <i class="vsm-icon pe-7s-box2 float-left icon"></i>
+                                <div class="media d-flex">
+                                    <div class="media-body text-left">
+                                        <div class="row icono">
+                                            <!-- <i class="fa-regular fa-file-lines"></i> -->
+                                        </div>
                                     </div>
-                                    <div class="row" style="margin: 0 0 0 0.3rem">
-                                        <span>{{finalizado.bodega_entrega}}</span>
+                                    <div class="media-body text-right">
+                                        <h3 class="numero">{{enProceso.numeroTurno}}</h3>
                                     </div>
                                 </div>
-                                <div class="media-body text-right">
-                                    <h3 class="numero">{{finalizado.number}}</h3>
-                                    <span>{{finalizado.client.name}}</span>
-                                </div>
-                            </div>
                             </div>
                         </div>
                     </div>

@@ -31,7 +31,7 @@ import { SocketService } from '../servicios/socket.service';
 export class FilaVirtualComponent {
   // Variables para almacenar los datos
   public pendientesArray:any [] = [];
-  public finalizadosArray:any [] = [];
+  public enProcesoArray:any [] = [];
   constructor(private webSocket: SocketService) {
     // Incializa la conexión al socket
     this.webSocket
@@ -42,11 +42,11 @@ export class FilaVirtualComponent {
             .sort((a: { fecha_update: string | number | Date; }, b: { fecha_update: string | number | Date; }) => new Date(a.fecha_update).getTime() - new Date(b.fecha_update).getTime());
             this.pendientesArray = nuevosDatos;
         }
-        if ("finalizadosArray" in socket) {
-          const nuevosDatos = socket.finalizadosArray
+        if ("enProcesoArray" in socket) {
+          const nuevosDatos = socket.enProcesoArray
             .sort((a: { updatedAt: string | number | Date; }, b: { updatedAt: string | number | Date; }) => new Date(a.updatedAt).getTime() - new Date(b.updatedAt).getTime());
 
-            this.finalizadosArray = nuevosDatos;
+            this.enProcesoArray = nuevosDatos;
         }
         // console.log(this.entregadoSala);
         // console.log(this.pickingProceso);
