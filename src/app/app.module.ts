@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ListadoComponent } from './listado/listado.component';
 import { SocketIoConfig, SocketIoModule } from "ngx-socket-io";
 import { environment } from 'src/environments/environment.development';
+import { TurnosComponent } from './turnos/turnos.component';
+import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 const config: SocketIoConfig = { url: environment.socketURL, options: {} };
 
@@ -15,13 +18,16 @@ const config: SocketIoConfig = { url: environment.socketURL, options: {} };
   declarations: [
     AppComponent,
     FilaVirtualComponent,
-    ListadoComponent
+    ListadoComponent,
+    TurnosComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    HttpClientModule,
     SocketIoModule.forRoot(config),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
