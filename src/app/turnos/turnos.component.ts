@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TurnosService } from '../servicios/turnos.service';
 import Swal from 'sweetalert2';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalAgregarTurnoComponent } from './componentes/modal-agregar-turno/modal-agregar-turno.component';
 
 @Component({
   selector: 'app-turnos',
@@ -9,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class TurnosComponent {
   public turnos: any[] = [];
-  constructor (private turnosService: TurnosService) {
+  constructor (private turnosService: TurnosService, private modal: NgbModal) {
     this.turnosService.getTurnos().subscribe((data:any) => {
       if (data.ok) {
         this.turnos = data.turnos;
@@ -24,6 +26,8 @@ export class TurnosComponent {
   }
 
   openModal() {
+    let modal = this.modal.open(ModalAgregarTurnoComponent, {
+      size: 'xl'});
   }
 
 }

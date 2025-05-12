@@ -1,0 +1,69 @@
+<div class="modal-header">
+    <h4 class="modal-title text-black" id="modal-basic-title"><strong>Nuevo Turno</strong></h4>
+</div>
+<div class="modal-body">
+    <form [formGroup]="turnosForm">
+        
+        <div class="mb-3">
+            <label for="paciente">Paciente visita</label>
+            <div class="input-group">
+                <input formControlName="paciente" id="paciente" class="form-control"  type="text"
+                    name="paciente" />
+            </div>
+            <div *ngIf="turnosForm.get('paciente')?.touched && turnosForm.get('paciente')?.errors" class="error-message text-danger">
+                <span *ngIf="turnosForm.get('paciente')?.errors?.['required']">El paciente es obligatorio.</span>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="medico">Médico visita</label>
+            <div class="input-group">
+                <input formControlName="medico" id="medico" class="form-control"  type="text"
+                    name="medico" />
+            </div>
+            <div *ngIf="turnosForm.get('medico')?.touched && turnosForm.get('medico')?.errors" class="error-message text-danger">
+                <span *ngIf="turnosForm.get('medico')?.errors?.['required']">El medico es obligatorio.</span>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="motivo">Motivo visita</label>
+            <div class="input-group">
+                <input formControlName="motivo" id="motivo" class="form-control"  type="text"
+                    name="motivo" />
+            </div>
+            <div *ngIf="turnosForm.get('motivo')?.touched && turnosForm.get('motivo')?.errors" class="error-message text-danger">
+                <span *ngIf="turnosForm.get('motivo')?.errors?.['required']">El motivo es obligatorio.</span>
+            </div>
+        </div>
+
+        
+        <div class="mb-3">
+            <label for="prioridad">Prioridad visita</label>
+            <div class="input-group">
+                <select formControlName="prioridad" class="custom-select form-control-sm mb-3" name="prioridad" aria-label="prioridad">
+                    <option value="baja">Baja</option>
+                    <option value="media">Media</option>
+                    <option value="alta">Producto</option>
+                </select>
+            </div>
+            <div *ngIf="turnosForm.get('prioridad')?.touched && turnosForm.get('prioridad')?.errors" class="error-message text-danger">
+                <span *ngIf="turnosForm.get('prioridad')?.errors?.['required']">La prioridad es obligatoria.</span>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label for="consultorio">Consultorio visita</label>
+            <div class="input-group">
+                <input formControlName="consultorio" id="consultorio" class="form-control"  type="text"
+                    name="consultorio" />
+            </div>
+            <div *ngIf="turnosForm.get('consultorio')?.touched && turnosForm.get('consultorio')?.errors" class="error-message text-danger">
+                <span *ngIf="turnosForm.get('consultorio')?.errors?.['required']">El consultorio es obligatorio.</span>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="guardar()">Crear</button>
+</div>

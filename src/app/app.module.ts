@@ -11,6 +11,8 @@ import { environment } from 'src/environments/environment.development';
 import { TurnosComponent } from './turnos/turnos.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalAgregarTurnoComponent } from './turnos/componentes/modal-agregar-turno/modal-agregar-turno.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const config: SocketIoConfig = { url: environment.socketURL, options: {} };
 
@@ -19,12 +21,14 @@ const config: SocketIoConfig = { url: environment.socketURL, options: {} };
     AppComponent,
     FilaVirtualComponent,
     ListadoComponent,
-    TurnosComponent
+    TurnosComponent,
+    ModalAgregarTurnoComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
     SocketIoModule.forRoot(config),
     NgbModule,
