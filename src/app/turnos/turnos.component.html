@@ -1,7 +1,7 @@
 <div class="container mt-5">
     <div class="row flex">
         <div class="col-md-12 ">
-            <h4 class="mb-3">Gestor de Turnos</h4>
+            <h4 class="mb-3 text-white">Gestor de Turnos</h4>
         </div>
         <div class ="col-md-12">
             <button type="button" class="btn btn-primary" (click)="openModal()">Agregar Turno</button>
@@ -14,15 +14,13 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Rut</th>
                     <th scope="col">Estado</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let turno of turnos">
                     <th scope="row">{{turno.numeroTurno}}</th>
-                    <td>{{turno.nombre + turno.apellido}}</td>
-                    <td>{{turno.rut}}</td>
+                    <td>{{turno.paciente}}</td>
                     <td>{{turno.estado}}</td>
                   </tr>
                 </tbody>

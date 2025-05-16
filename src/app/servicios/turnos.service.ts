@@ -11,4 +11,8 @@ export class TurnosService {
   getTurnos() {
     return this.http.get('http://localhost:3003/turnos');
   }
+
+  createTurno(turno: any) {
+    return this.http.post('http://localhost:3003/turnos', turno);
+  }
 }

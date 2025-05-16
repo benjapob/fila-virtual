@@ -28,6 +28,26 @@ export class TurnosComponent {
   openModal() {
     let modal = this.modal.open(ModalAgregarTurnoComponent, {
       size: 'xl'});
+
+    modal.result.then((data) => {
+      if (data.ok) {
+        this.turnos.push(data.turno);
+        Swal.fire({
+          icon: 'success',
+          title: 'Éxito',
+          text: 'Turno agregado correctamente'
+        });
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'No se pudo agregar el turno'
+        });
+      }
+    
+    },
+    (error) => {
+    });
   }
 
 }
