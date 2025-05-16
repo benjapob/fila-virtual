@@ -50,10 +50,7 @@ export class FilaVirtualComponent {
         }
         // console.log(this.entregadoSala);
         // console.log(this.pickingProceso);
-      });
-      
-    this.webSocket.emitir("primeraConexion", {});
-    
+      });    
   }
 
   trackById(index: number, item: any): any {

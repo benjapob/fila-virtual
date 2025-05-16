@@ -9,10 +9,14 @@ export class TurnosService {
   constructor(private http: HttpClient) { }
 
   getTurnos() {
-    return this.http.get('http://localhost:3003/turnos');
+    return this.http.get('http://localhost:3003/getTurnos');
   }
 
   createTurno(turno: any) {
-    return this.http.post('http://localhost:3003/turnos', turno);
+    return this.http.post('http://localhost:3003/createTurno', turno);
+  }
+
+  deleteTurno(id: any) {
+    return this.http.post('http://localhost:3003/deleteTurno', {id});
   }
 }

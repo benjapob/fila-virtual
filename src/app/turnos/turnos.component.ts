@@ -50,4 +50,29 @@ export class TurnosComponent {
     });
   }
 
+  borrarTurno(id:string) {
+    Swal.fire({
+      title: "Aviso",
+      text: "Este cambio es irreversible, el turno se eliminará de la lista. ¿Deseas continuar?",
+      showDenyButton: true,
+      icon:'question',
+      confirmButtonText: "Continuar",
+      denyButtonText: `Cancelar`
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.turnosService.deleteTurno(id).subscribe((response: any) => {
+          if (response.ok) {
+            //Elimino el elemento del array
+            this.turnos.splice(this.turnos.findIndex(turno => turno._id === id), 1);
+            Swal.fire("Turno eliminado!", "", "success");
+          }
+        });
+      }
+    });
+  }
+
+  editarTurno(id:string) {
+
+  }
+
 }
