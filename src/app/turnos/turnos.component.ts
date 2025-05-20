@@ -71,8 +71,47 @@ export class TurnosComponent {
     });
   }
 
-  editarTurno(id:string) {
+  async editarTurno(id:string) {
 
+  const { value: estado } = await Swal.fire({
+  title: "Cambiar estado",
+  input: "select",
+  inputOptions: {
+    espera: "En espera",
+    atencion: "En atención",
+    finalizado: "Finalizado",
+  },
+  inputPlaceholder: "Selecciona un estado",
+  showCancelButton: true,
+  inputValidator: (value) => {
+    return new Promise((resolve) => {
+      if (!value) {
+        resolve("El estado es obligatorio!");
+      } else {
+        resolve()
+      }
+    });
+  }
+  });
+
+  if (estado) {
+    this.turnosService.updateTurno(id, estado).subscribe((respuesta:any) => {
+      if (respuesta.ok) {
+        Swal.fire({title:'Estado actualizado', text:'El estado ha sido actualizado correctamente', icon:'success'});
+        this.turnosService.getTurnos().subscribe((data:any) => {
+        if (data.ok) {
+          this.turnos = data.turnos;
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'No se pudieron cargar los turnos'
+          });
+        }
+      });
+      }
+    })
+  }
   }
 
 }

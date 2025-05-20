@@ -19,4 +19,8 @@ export class TurnosService {
   deleteTurno(id: any) {
     return this.http.post('http://localhost:3003/deleteTurno', {id});
   }
+
+  updateTurno(id: any, estado: string) {
+    return this.http.post('http://localhost:3003/updateTurno', {id, estado});
+  }
 }

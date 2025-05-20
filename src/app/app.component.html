@@ -1,8 +1,12 @@
-<h1 *ngIf="router.url ==='/'" class="text-center">Fila Virtual</h1>
+<h1 *ngIf="router.url ==='/'" class="text-center text-white">Fila Virtual</h1>
 
 <div class="text-center">
-    <button (click)="navigateTo('/fila-virtual')" class="btn btn-primary m-2">Ir a Fila Virtual</button>
-    <button (click)="navigateTo('/turnos')" class="btn btn-secondary m-2">Ir a Turnos</button>
+    <button class="btn btn-primary m-2">
+        <a href="/fila-virtual" class="text-white text-decoration-none">Ir a Fila Virtual</a>
+    </button>
+    <button class="btn btn-secondary m-2">
+        <a href="/turnos" class="text-white text-decoration-none">Ir a Turnos</a>
+    </button>
 </div>
 
 <router-outlet></router-outlet>
