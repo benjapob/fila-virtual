@@ -14,7 +14,9 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nombre</th>
+                    <th scope="col">Médico</th>
                     <th scope="col">Estado</th>
+                    <th scope="col">Prioridad</th>
                     <th scope="col">Acciones</th>
                   </tr>
                 </thead>
@@ -22,7 +24,9 @@
                   <tr *ngFor="let turno of turnos">
                     <th scope="row">{{turno.numeroTurno}}</th>
                     <td>{{turno.paciente}}</td>
+                    <td>{{turno.medico}}</td>
                     <td>{{turno.estado}}</td>
+                    <td>{{turno.prioridad}}</td>
                     <td>
                         <button class="btn" (click)="editarTurno(turno._id)">
                             <i class="fa-solid fa-pencil text-warning"></i>
