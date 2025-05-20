@@ -16,7 +16,7 @@ Una vez dentro del sistema puedes crear turnos en el menú `Ver Turnos` y agrega
 
 En la pantalla `Ver Fila` puedes ver en tiempo real cómo se mueven los turnos, abajo dejo un ejemplo:
 
-<img src="./assets/agregar.gif"/>
+<img src="src/assets/agregar.gif"/>
 
 ## Construido con 🛠️
 
