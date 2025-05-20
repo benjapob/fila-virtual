@@ -18,6 +18,8 @@ En la pantalla `Ver Fila` puedes ver en tiempo real cómo se mueven los turnos, 
 
 <img src="src/assets/agregar.gif"/>
 
+<img src="src/assets/editar.gif"/>
+
 ## Construido con 🛠️
 
 * [Angular](https://angular.dev/overview) - El framework web usado
