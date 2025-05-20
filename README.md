@@ -1,27 +1,30 @@
 # FilaVirtual
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+Proyecto simple pero que utiliza hartas tecnologías para lograr una fila virtual en tiempo real con un CRUD de turnos. El proyecto tiene dos páginas pricipales, una del listado de turnos donde puedes crear, modificar y borrar turnos, la otra página es la visualización en tiempo real de los turnos.
 
-## Development server
+## Comenzando 🚀
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Usa `npm i` para instalar los paquetes necesarios.
 
-## Code scaffolding
+Corre `ng serve` para levantar un servidor dev. Navega a `http://localhost:4200/` para entrar al menú.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ve a `http://github.com/benjapob/fila-virtual-back` y sigue las instrucciones para correr el backend.
 
-## Build
+## Overview
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Una vez dentro del sistema puedes crear turnos en el menú `Ver Turnos` y agregar, modificar y borrar turnos.
 
-## Running unit tests
+En la pantalla `Ver Fila` puedes ver en tiempo real cómo se mueven los turnos, abajo dejo un ejemplo:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+<img src="./assets/agregar.gif"/>
 
-## Running end-to-end tests
+## Construido con 🛠️
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+* [Angular](https://angular.dev/overview) - El framework web usado
 
-## Further help
+* [Bootstrap](https://getbootstrap.com/docs/5.3/getting-started/introduction/) - Para los estilos
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* [Socket](https://github.com/rodgc/ngx-socket-io) - Para manejar las actualizaciones en tiempo real
+
+---
+⌨️ por [benjapob](https://github.com/benjapob)
